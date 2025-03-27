@@ -85,7 +85,7 @@ class GetPaths():
         return f'Q:{raw_prompt}\nA:{self.prompt}'
 
 
-# New helper class to extract the answer span and compute score.
+#  Class to extract the answer span and compute score.
 class AnswerExtractor:
     def __init__(self, tokenizer: AutoTokenizer, pattern: str = r'-?\d+\.?\d*'):
         self.tokenizer = tokenizer
@@ -125,7 +125,6 @@ class AnswerExtractor:
         return answer_span_text, score, is_correct
 
 
-# Updated Decoder class which now utilizes AnswerExtractor.
 class Decoder():
     def __init__(self, tokenizer: AutoTokenizer = None):
         self.extractor = AnswerExtractor(tokenizer)
